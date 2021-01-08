@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+@-webkit-keyframes pulo {
+    to { -webkit-transform: scale(1.2); }
+  }
+  @-moz-keyframes pulo {
+    to { -moz-transform: scale(1.2); }
+  }
+  @keyframes pulo {
+    to { transform: scale(1.2); }
+  }
+
+html, body {
+    height: 100vh;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+}
+
+.tela {
+    width: 450px;
+    background: url('../images/imagem-de-fundo.png') no-repeat;
+    background-size: 450px auto; 
+}
+
+.tela .item {
+    border-radius: 10px;
+    background-color: #15F6FA;
+    height: 80px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    -webkit-animation: pulo .5s alternate;
+    -moz-animation: pulo .5s alternate;
+    animation: pulo .5s alternate;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+}
+
+.tela .item:hover {
+    background-color: #0EDCDF;
+    border: 2px solid #15F6FA;
+}
