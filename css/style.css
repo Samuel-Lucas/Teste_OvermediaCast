@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
+@-webkit-keyframes visualizacao {
+  from { -webkit-opacity: 0%; }
+  to { -webkit-opacity: 100%; }
+}
+@-moz-keyframes visualizacao {
+  from { -webkit-opacity: 0%; }
+  to { -webkit-opacity: 100%; }
+}
+@keyframes visualizacao{
+  from { -webkit-opacity: 0%; }
+  to { -webkit-opacity: 100%; }
+}
+
 @-webkit-keyframes pulo {
     to { -webkit-transform: scale(1.1); }
   }
@@ -8,19 +21,6 @@
   }
   @keyframes pulo {
     to { transform: scale(1.1); }
-  }
-
-@-webkit-keyframes visualizacao {
-    from { -webkit-opacity: 0%; }
-    to { -webkit-opacity: 100%; }
-  }
-  @-moz-keyframes visualizacao {
-    from { -webkit-opacity: 0%; }
-    to { -webkit-opacity: 100%; }
-  }
-  @keyframes visualizacao{
-    from { -webkit-opacity: 0%; }
-    to { -webkit-opacity: 100%; }
   }
 
 html, body {
@@ -49,6 +49,10 @@ html, body {
     font-weight: bold;
     cursor: pointer;
 }
+
+.interface h6, .interface .item {
+  visibility: hidden;
+} 
 
 .interface .item:hover {
     background-color: #0EDCDF;

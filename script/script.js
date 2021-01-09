@@ -1,25 +1,42 @@
 let i = 1
 let item = ''
+let titulo = document.querySelector('h6')
+titulo.classList.add('opacidade')
+titulo.style.visibility = 'visible'
 
-function transicao() {
+setTimeout(transicaoItens, 500)
+    
+function transicaoItens() {
+    item = document.querySelector('#item' + i)
+    item.classList.add('opacidade')
+    item.style.visibility = 'visible'
+    i++
 
-    let titulo = document.querySelector('h6')
-    titulo.classList.add('opacidade')
+    if(i < 5) {
+        setTimeout(transicaoItens, 250)
+    } else {
+        i = 1
+        setInterval(pulo, 500)
+    }
 }
-
-transicao()
 
 function pulo() {
 
     item = document.querySelector('#item' + i)
+    item.classList.remove('opacidade')
     item.classList.add('animacao')
     i++
 
     setTimeout(() => {
         item.classList.remove('animacao')
-    }, 300)
+    }, 400)
 
-    i = (i > 4 ? 1 : i)
+    if(i > 4) {
+        setTimeout(() => {
+            i = 1
+        }, 1500)
+    } else {
+        i = i
+    }
 }
 
-setInterval(pulo, 800)  
