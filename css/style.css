@@ -1,13 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
 @-webkit-keyframes pulo {
-    to { -webkit-transform: scale(1.2); }
+    to { -webkit-transform: scale(1.1); }
   }
   @-moz-keyframes pulo {
-    to { -moz-transform: scale(1.2); }
+    to { -moz-transform: scale(1.1); }
   }
   @keyframes pulo {
-    to { transform: scale(1.2); }
+    to { transform: scale(1.1); }
+  }
+
+@-webkit-keyframes visualizacao {
+    from { -webkit-opacity: 0%; }
+    to { -webkit-opacity: 100%; }
+  }
+  @-moz-keyframes visualizacao {
+    from { -webkit-opacity: 0%; }
+    to { -webkit-opacity: 100%; }
+  }
+  @keyframes visualizacao{
+    from { -webkit-opacity: 0%; }
+    to { -webkit-opacity: 100%; }
   }
 
 html, body {
@@ -19,13 +32,14 @@ html, body {
     font-size: 25px;
 }
 
-.tela {
+.interface {
     width: 450px;
     background: url('../images/imagem-de-fundo.png') no-repeat;
     background-size: 450px auto; 
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.tela .item {
+.interface .item {
     border-radius: 10px;
     background-color: #15F6FA;
     height: 80px;
@@ -34,14 +48,21 @@ html, body {
     color: white;
     font-weight: bold;
     cursor: pointer;
-    -webkit-animation: pulo .5s alternate;
-    -moz-animation: pulo .5s alternate;
-    animation: pulo .5s alternate;
-    animation-delay: 2s;
-    animation-iteration-count: infinite;
 }
 
-.tela .item:hover {
+.interface .item:hover {
     background-color: #0EDCDF;
     border: 2px solid #15F6FA;
+}
+
+.opacidade {
+  -webkit-animation: visualizacao 2s;
+  -moz-animation: visualizacao 2s;
+  animation: visualizacao 2s;
+}
+
+.animacao {
+  -webkit-animation: pulo .4s alternate;
+  -moz-animation: pulo .4s alternate;
+  animation: pulo .4s alternate;
 }
