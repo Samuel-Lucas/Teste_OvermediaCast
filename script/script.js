@@ -1,54 +1,53 @@
-let i = 1
-let item = ''
+let i = 0
+let itens = document.getElementsByClassName('item')
+let qtdItens = itens.length
 let titulo = document.querySelector('h6')
 let modal = document.querySelector('#modal')
-
 
 titulo.classList.add('opacidade')
 titulo.style.visibility = 'visible'
 
-setTimeout(transicaoItens, 500)
-    
+setTimeout(transicaoItens, 400)
+
 function transicaoItens() {
-    item = document.querySelector('#item' + i)
-    item.classList.add('opacidade')
-    item.style.visibility = 'visible'
+    itens[i].classList.add('opacidade')
+    itens[i].style.visibility = 'visible'
     i++
 
-    if(i < 5) {
-        setTimeout(transicaoItens, 250)
+    if(i < qtdItens) {
+        
+        setTimeout(transicaoItens, 200)
     } else {
-        i = 1
+        i = 0
 
         setTimeout(() => {
-            for(let j = 1; j <= 4; j++) {
-                item = document.querySelector('#item' + j)
-                item.classList.remove('opacidade')
-            }
-        }, 450)
+            for(let j = 0; j < qtdItens; j++) {            
+                itens[j].classList.remove('opacidade')
+            } 
+        }, 1000)
         
-
-        setInterval(pulo, 500)
+        setTimeout(pulo, 1500)
     }
 }
 
 function pulo() {
 
-    item = document.querySelector('#item' + i)
-    item.classList.add('animacao')
+    itens[i].classList.add('animacao')
+
+    if(itens[i].classList.contains("animacao")) {
+        setTimeout(() => {
+            itens[i].classList.remove('animacao')
+        }, 250)
+    }
+
     i++
 
-    setTimeout(() => {
-        item.classList.remove('animacao')
-    }, 450)
-
-    if(i > 4) {
-        setTimeout(() => {
-            i = 1
-        }, 1500)
+    if(i > (qtdItens-1)) {
+        i = 0
+        setTimeout(pulo, 1500)
     } else {
-        i = i
-    }
+        setTimeout(pulo, 400)
+    } 
 }
 
 async function showContent(indice) {

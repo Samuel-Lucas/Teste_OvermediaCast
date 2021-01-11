@@ -71,9 +71,9 @@ button.close {
 }
 
 .animacao {
-  -webkit-animation: pulo .4s alternate;
-  -moz-animation: pulo .4s alternate;
-  animation: pulo .4s alternate;
+  -webkit-animation: pulo .3s alternate;
+  -moz-animation: pulo .3s alternate;
+  animation: pulo .3s alternate;
 }
 
 @media (min-width: 601px)
