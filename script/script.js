@@ -3,13 +3,18 @@ let itens = document.getElementsByClassName('item')
 let qtdItens = itens.length
 let titulo = document.querySelector('h6')
 let modal = document.querySelector('#modal')
+let tituloModal = document.querySelector('#modal h3')
+let imagem = document.querySelector('#modal img')
+let height = document.querySelector('#modal .height')
+let width = document.querySelector('#modal .weight')
 
 titulo.classList.add('opacidade')
 titulo.style.visibility = 'visible'
 
 setTimeout(transicaoItens, 400)
 
-function transicaoItens() {
+function transicaoItens() {   // Função onde os itens se tornam visíveis
+
     itens[i].classList.add('opacidade')
     itens[i].style.visibility = 'visible'
     i++
@@ -30,16 +35,14 @@ function transicaoItens() {
     }
 }
 
-function pulo() {
+function pulo() {   // Função da animação de 'pulo' passada para os itens
 
     itens[i].classList.add('animacao')
 
-    if(itens[i].classList.contains("animacao")) {
-        setTimeout(() => {
-            itens[i].classList.remove('animacao')
-        }, 250)
-    }
-
+    setTimeout(() => {
+        itens[i].classList.remove('animacao')
+    }, 350)
+    
     i++
 
     if(i > (qtdItens-1)) {
@@ -50,12 +53,7 @@ function pulo() {
     } 
 }
 
-async function showContent(indice) {
-
-    let tituloModal = document.querySelector('#modal h3')
-    let imagem = document.querySelector('#modal img')
-    let height = document.querySelector('#modal .height')
-    let width = document.querySelector('#modal .weight')
+async function showContent(indice) {   // Função de exibição dos dados da API conforme indice passado
 
     let api_url = 'https://pokeapi.co/api/v2/pokemon/' + indice
     let response = await fetch(api_url)
@@ -69,6 +67,6 @@ async function showContent(indice) {
     width.innerHTML = data.weight
 }
 
-function closeModal() {
+function closeModal() {   // Função para fechar o Modal
     modal.style.display = 'none'
 }

@@ -15,13 +15,13 @@
 
 @-webkit-keyframes pulo {
     to { -webkit-transform: scale(1.1); }
-  }
-  @-moz-keyframes pulo {
-    to { -moz-transform: scale(1.1); }
-  }
-  @keyframes pulo {
-    to { transform: scale(1.1); }
-  }
+}
+@-moz-keyframes pulo {
+  to { -moz-transform: scale(1.1); }
+}
+@keyframes pulo {
+  to { transform: scale(1.1); }
+}
 
 html, body {
     height: 100vh;
@@ -100,4 +100,3 @@ button.close {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 }
-
